@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "demo": "deno run --watch --allow-read=demo.html --allow-net=:8000 demo.ts"
+  }
+}

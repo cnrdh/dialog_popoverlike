@@ -3,18 +3,29 @@
   ::backdrop {
     backdrop-filter: blur(0.2rem);
   }
+
+  :root {
+    font-family: sans-serif;
+  }
 </style>
 
 <button popovertarget="dialog1">open</button>
 
 <dialog id="dialog1" aria-modal="true" popover>
-  <h2>Modal dialog</h2>
-  <p></p>
-  <button>close</button>
+  <section>
+    <h2>Modal dialog</h2>
+  </section>
+  <button popovertarget="dialog1" popovertargetaction="hide">close</button>
 </dialog>
+
+<output hidden>Browser supports Popover API (dialogPopoverlike is never loaded)</output>
+
 <script type="module">
   if (!HTMLElement.prototype.hasOwnProperty("popover")) {
-    const mod = await import("https://deno.land/x/dialog_popoverlike@0.0.1/mod.js");
+    const mod = await import("https://deno.land/x/dialog_popoverlike/mod.js");
     mod.dialogPopoverlike("dialog1");
+
+  } else {
+    document.querySelector("output").removeAttribute("hidden");
   }
 </script>

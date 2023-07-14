@@ -31,9 +31,9 @@ export const dialogPopoverlike = (id) => {
     if (closeButton) {
       closeButton.addEventListener("click", () => {
         dialog.close();
-      }, false);
+      });
     }
-    // Alternatively, move the close button inside a form[method=dialog] inside the dialog
+    // Alternative to the above: move the close button inside a form[method=dialog] inside the dialog
     // const dialogForm = dialog.querySelector(`form[method="dialog"]`);
     // if (dialogForm && closeButton) {
     //   dialogForm.appendChild(closeButton);
